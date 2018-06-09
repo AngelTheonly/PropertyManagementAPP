@@ -1,0 +1,177 @@
+@import "style.scss";
+.content {
+    padding-top: px2rem(44);
+    padding-bottom: px2rem(150);
+    .header-location {
+        background-color: #2A83FF;
+        padding: px2rem(15);
+        .locaticon {
+            height: px2rem(40);
+            background-color: #1670EF;
+            display: flex;
+            align-items: center;
+            padding: 0 px2rem(15);
+            border-radius: px2rem(40);
+            .name {
+                display: flex;
+                align-items: center;
+                font-size: px2rem(12);
+                color: #A5CBFF;
+                .mui-icon {
+                    font-size: px2rem(20);
+                    margin-right: px2rem(10);
+                }
+            }
+        }
+    }
+    .mui-input-row {
+        background-color: #F4F4F4;
+        textarea {
+            font-size: px2rem(14);
+            border: px2rem(1) solid #e2e2e2;
+            background-color: #fff;
+            margin-bottom: unset;
+        }
+    }
+    .img-wapper {
+        display: flex;
+        flex-wrap: wrap;
+        .preview {
+            margin-right: px2rem(10);
+            margin-bottom: px2rem(10);
+            height: px2rem(55);
+            position: relative;
+            img {
+                width: px2rem(55);
+                height: px2rem(55);
+            }
+        }
+        .delete {
+            position: absolute;
+            top: -px2rem(-4);
+            height: px2rem(15);
+            width: px2rem(15);
+            right: px2rem(-4);
+            border-radius: 50%;
+            background-color: #000;
+            transform: rotate(45deg);
+            &::after,
+            &::before {
+                margin: auto;
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+            }
+            &::after {
+                height: px2rem(1);
+                width: 70%;
+            }
+            &::before {
+                width: px2rem(1);
+                height: 70%;
+            }
+        }
+        .button {
+            position: relative;
+            width: px2rem(55);
+            height: px2rem(55);
+            border: px2rem(1) solid #E2E2E2;
+            background-color: #F6F6F6;
+            margin-right: 10px;
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                background: #2A83FF;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                border-radius: px2rem(5);
+            }
+            &::after {
+                width: 50%;
+                height: px2rem(2);
+            }
+            &::before {
+                width: px2rem(2);
+                height: 50%;
+            }
+        }
+    }
+    .record-wapper{
+        padding: px2rem(15);
+        .record-item{
+            border-radius: px2rem(10)  px2rem(10) 0  px2rem(10);
+            background-color: #F9F9F9;
+            height: px2rem(40);
+            border: px2rem(1) solid #E2E2E2;
+            color: #919191;
+            font-size: px2rem(13);
+            display: flex;
+            align-items: center;
+            padding: 0 px2rem(15);
+        }
+    }
+}
+
+.bottom-wapper{
+    height: px2rem(160);
+   
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    .record{
+        text-align: center;
+        .record-btn{
+            margin: auto;
+            width: px2rem(74);
+            height: px2rem(74);
+            border-radius: 50%;
+            background-color: #F6F6F6;
+            border: px2rem(1) solid #E2E2E2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: px2rem(40);
+            }
+        }
+        .record-text{
+            margin-top: px2rem(5);
+            font-size: px2rem(10);
+            color: #2A83FF;
+        }
+    }
+    .bottom-submit{
+        margin: 0 px2rem(15);
+        margin-top: px2rem(10);
+        
+        height: px2rem(44);
+        color: #fff;
+        border-radius: px2rem(5);
+        text-align: center;
+        line-height: px2rem(44);
+        background-color: #2A83FF;
+        box-shadow: 0 px2rem(2) px2rem(3) rgba(#2A83FF,.5);
+    }
+}
+
+.mrk-record{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: px2rem(100);
+    width: 90%;
+    background-color: #eee;
+}

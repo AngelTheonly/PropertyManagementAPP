@@ -1,0 +1,26 @@
+@import "style.scss";
+.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech{
+    color: #fff;
+}
+.form{
+    .form-title{
+        color: #fff;
+        font-size: px2rem(17);
+    }
+   .input{
+       background-color: transparent;
+       border-radius: unset;
+       border: unset;
+       border-bottom: px2rem(1) solid #fff;
+       color: #fff;
+   } 
+}
+.botton{
+    height: px2rem(44);
+    line-height: px2rem(44);
+    color: #fff;
+    font-size: px2rem(17);
+    text-align: center;
+    border-radius: px2rem(40);
+    background-color: #1b216c;
+}

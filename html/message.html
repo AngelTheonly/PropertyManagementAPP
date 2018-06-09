@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/message.css"/>
+		<script type="text/javascript">
+				// 获取HTML的DOM
+		var htmlDom = document.getElementsByTagName('html')[0];
+		var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+		    htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body>
+		<div class="bottom-bow"></div>
+		<div id="message">
+		<header class="mui-bar mui-bar-nav">
+				<a v-if="message" style="color: #fff;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" style="color: #fff;">消息</h1>
+			</header>
+			    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="list-item" v-for="item in list">
+							<div class="item-img">
+								<img :src="item.imgUrl" alt="" />
+							</div>
+							<div class="item-wapper">
+								<div class="desc">
+									<span class="title">{{item.name}}</span>
+									<span class="time">{{item.time}}</span>
+								</div>
+								<div class="message">{{item.desc}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var message = new Vue({
+				el:'#message',
+				data:{
+					message:'',
+					list:[
+					  {
+					  	id:0,
+					  	imgUrl:'http://img0.imgtn.bdimg.com/it/u=669316548,3510630966&fm=27&gp=0.jpg',
+					  	name:'张全蛋',
+					  	time:'2分钟前',
+					  	desc:'小区门口违章停车快去处理下'
+					  },
+					  {
+					  	id:1,
+					  	imgUrl:'http://img4.imgtn.bdimg.com/it/u=3296169939,2964109829&fm=27&gp=0.jpg',
+					  	name:'小花',
+					  	time:'5分钟前',
+					  	desc:'今天晚上天气不错，一起去看电影吧'
+					  },
+					  {
+					  	id:2,
+					  	imgUrl:'http://img1.imgtn.bdimg.com/it/u=2200206617,1048253816&fm=27&gp=0.jpg',
+					  	name:'boss',
+					  	time:'12:21',
+					  	desc:'抓紧时间赶项目，月底交付。'
+					  },
+					  {
+					  	id:3,
+					  	imgUrl:'http://img0.imgtn.bdimg.com/it/u=4226190776,3456727208&fm=27&gp=0.jpg',
+					  	name:'王大帅',
+					  	time:'11:28',
+					  	desc:'欠我的钱什么时候还呢？今天不回话，晚上下班去你家堵你！'
+					  },
+					]
+				},
+				methods:{
+					
+				}
+			});
+			
+			mui.init({
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						style:'circle',//必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						auto: false, //可选,默认false.首次加载自动下拉刷新一次
+						callback: refreshData //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: true, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: loadMoreData //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+			
+	
+			mui.plusReady(function(){
+				var skipData = plus.webview.currentWebview();
+				if(skipData.name){
+					console.log(skipData.name)
+					message.message = skipData.name
+				}
+			})
+			
+			function refreshData(){
+			setTimeout(function(){
+					mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+					mui('#refreshContainer').pullRefresh().refresh(true);
+					mui.toast('下拉加载完成')
+				},1000)
+			}
+			
+			function loadMoreData(){
+				setTimeout(function(){
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+					mui.toast('上拉更多完成')
+				},1000)
+			}
+
+		</script>
+	</body>
+</html>

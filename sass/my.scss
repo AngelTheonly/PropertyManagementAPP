@@ -1,0 +1,36 @@
+@import "style.scss";
+.content {
+    margin-top: px2rem(44);
+    .list {
+        padding-top: px2rem(15);
+        .item {
+            padding-left: px2rem(15);
+            height: px2rem(44);
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            overflow: hidden;
+            position: relative;
+            .item-title {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                flex: 1;
+                justify-content: space-between;
+                .desc {
+                    margin-right: px2rem(40);
+                    font-size: px2rem(14);
+                    color: #ABABAB;
+                    position: relative;
+                    img{
+                        width: px2rem(40);
+                        height: px2rem(40);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,421 @@
+body {
+  background-color: #fff;
+  line-height: unset;
+  font-size: 0.4266666667rem;
+  color: #3E3E3E; }
+
+.margin-top20 {
+  margin-top: 0.5333333333rem; }
+
+.margin-top15 {
+  margin-top: 0.4rem; }
+
+.margin-bottom15 {
+  margin-bottom: 0.4rem; }
+
+.padding15 {
+  padding: 0.4rem; }
+
+.padding-top-bottom5 {
+  box-sizing: content-box;
+  padding: 0.1333333333rem 0; }
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.mui-bar {
+  background-color: #fff;
+  z-index: 11;
+  box-shadow: unset; }
+
+.mui-bar-nav {
+  background-color: #2A83FF;
+  height: 1.1733333333rem;
+  font-size: 0.4533333333rem; }
+
+.mui-content {
+  background-color: #fff; }
+
+.mui-pull-caption {
+  font-weight: 100;
+  color: #ABABAB;
+  font-size: 0.3733333333rem; }
+
+.bottom-bow {
+  position: fixed;
+  width: 100%;
+  bottom: -1px;
+  height: 1px;
+  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1000; }
+
+.left-arrows {
+  position: relative; }
+  .left-arrows::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0.48rem;
+    width: 0.2133333333rem;
+    height: 0.2133333333rem;
+    border-top: 0.0266666667rem solid #ababab;
+    border-right: 0.0266666667rem solid #ababab;
+    transform: rotate(45deg); }
+
+.bottom-underline {
+  border-bottom: 0.0266666667rem solid #E2E2E2; }
+
+.left-underline {
+  overflow: hidden;
+  position: relative; }
+  .left-underline::after {
+    content: '';
+    position: absolute;
+    left: -0.0266666667rem;
+    top: 0;
+    height: 100%;
+    width: 0.0266666667rem;
+    box-shadow: 0 0 0.0133333333rem rgba(0, 0, 0, 0.3); }
+
+.mui-preview-image.mui-fullscreen {
+  position: fixed;
+  z-index: 100;
+  background-color: #000; }
+
+.mui-preview-header,
+.mui-preview-footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 10; }
+
+.mui-preview-header {
+  height: 44px;
+  top: 0; }
+
+.mui-preview-footer {
+  height: 50px;
+  bottom: 0px; }
+
+.mui-preview-header .mui-preview-indicator {
+  display: block;
+  line-height: 25px;
+  color: #fff;
+  text-align: center;
+  margin: 15px auto 4;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  font-size: 16px; }
+
+.mui-preview-image {
+  display: none;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.mui-preview-image.mui-preview-in {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+.mui-preview-image.mui-preview-out {
+  background: none;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+.mui-preview-image.mui-preview-out .mui-preview-header,
+.mui-preview-image.mui-preview-out .mui-preview-footer {
+  display: none; }
+
+.mui-zoom-scroller {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-backface-visibility: hidden; }
+
+.mui-zoom {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.mui-slider .mui-slider-group .mui-slider-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%; }
+
+.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+  width: 100%; }
+
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+  display: inline-table; }
+
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+  display: table-cell;
+  vertical-align: middle; }
+
+.mui-preview-loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none; }
+
+.mui-preview-loading.mui-active {
+  display: block; }
+
+.mui-preview-loading .mui-spinner-white {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  height: 50px;
+  width: 50px; }
+
+.mui-preview-image img.mui-transitioning {
+  -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.steward-header {
+  height: 1.1733333333rem;
+  line-height: 1.1733333333rem;
+  color: #fff;
+  font-size: 0.4533333333rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; }
+  .steward-header .header-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.0666666667rem;
+    width: 1.0666666667rem;
+    display: flex;
+    align-items: center; }
+    .steward-header .header-icon .num {
+      position: absolute;
+      top: 0.1333333333rem;
+      right: 0.2666666667rem;
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: red;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.32rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .steward-header .header-icon img {
+      width: 0.8rem;
+      height: 0.8rem; }
+
+.steward-weather {
+  height: 0;
+  overflow: hidden;
+  padding: 0 0.4rem;
+  padding-bottom: 35%;
+  padding-top: 1.1733333333rem;
+  background: linear-gradient(#1B77F6, #51B7FF);
+  display: flex;
+  justify-content: space-between; }
+  .steward-weather .user {
+    padding-right: 0.4rem; }
+    .steward-weather .user .user-name {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.64rem; }
+    .steward-weather .user .user-position {
+      display: inline-block;
+      margin-top: 0.2666666667rem;
+      padding: 0.0266666667rem 0.2666666667rem;
+      border-radius: 0.5333333333rem;
+      background-color: #6DBBF8;
+      color: rgba(255, 255, 255, 0.7);
+      border: 0.0266666667rem solid rgba(255, 255, 255, 0.7);
+      font-size: 0.32rem;
+      margin-bottom: 0.5333333333rem; }
+    .steward-weather .user .time {
+      border-top: 0.0266666667rem solid rgba(255, 255, 255, 0.7);
+      padding-top: 0.2666666667rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.32rem; }
+  .steward-weather .weather {
+    width: 4.5333333333rem; }
+    .steward-weather .weather .temperature {
+      display: flex;
+      margin-bottom: 0.1333333333rem; }
+      .steward-weather .weather .temperature div {
+        flex: 1; }
+      .steward-weather .weather .temperature .left {
+        font-size: 1.8666666667rem;
+        color: rgba(255, 255, 255, 0.7);
+        position: relative;
+        line-height: 2.1333333333rem;
+        padding-right: 0.2666666667rem; }
+        .steward-weather .weather .temperature .left .left-icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0.2666666667rem;
+          height: 0.2666666667rem;
+          border-radius: 50%;
+          border: 0.0533333333rem solid rgba(255, 255, 255, 0.7); }
+      .steward-weather .weather .temperature .right {
+        padding-top: 0.4rem;
+        padding-left: 0.4rem; }
+        .steward-weather .weather .temperature .right .humidity {
+          padding-bottom: 0.2666666667rem;
+          border-bottom: 0.0266666667rem solid rgba(255, 255, 255, 0.7);
+          margin-bottom: 0.2666666667rem; }
+        .steward-weather .weather .temperature .right .humidity,
+        .steward-weather .weather .temperature .right .temperature-max-min {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.32rem;
+          display: flex;
+          justify-content: space-between; }
+  .steward-weather .weather-iocn-btn {
+    display: flex;
+    justify-content: space-between; }
+    .steward-weather .weather-iocn-btn div {
+      font-size: 0.32rem;
+      width: 47%;
+      color: rgba(255, 255, 255, 0.7);
+      height: 0.6666666667rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 0.1333333333rem rgba(0, 0, 0, 0.1);
+      background-color: #70C3FD;
+      border-radius: 0.0533333333rem; }
+
+.steward-notice {
+  display: flex;
+  align-items: center;
+  padding: 0.2666666667rem 0.4rem;
+  background-color: #F9F9F9; }
+  .steward-notice .stewrd-icon {
+    width: 0.5333333333rem;
+    height: 0.5333333333rem; }
+    .steward-notice .stewrd-icon img {
+      width: 100%; }
+  .steward-notice .stewrd-warpper {
+    margin-left: 0.4rem; }
+    .steward-notice .stewrd-warpper .notice-txt {
+      color: #333; }
+    .steward-notice .stewrd-warpper .notice-time {
+      margin-left: 0.2666666667rem;
+      color: #B6B6B6;
+      font-size: 0.3733333333rem; }
+
+.steward-task {
+  padding: 0.4rem; }
+  .steward-task .backlog {
+    padding: 0 0.4rem;
+    box-shadow: 0 0 0.2666666667rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.1333333333rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.2666666667rem;
+    margin-bottom: 0.4rem; }
+    .steward-task .backlog .game_time {
+      margin-bottom: -0.16rem; }
+    .steward-task .backlog .backlog-desc .num {
+      font-size: 0.64rem; }
+    .steward-task .backlog .backlog-desc .piece {
+      font-size: 0.32rem;
+      color: #666; }
+    .steward-task .backlog .backlog-desc .desc {
+      margin-left: 0.2666666667rem;
+      color: #666;
+      font-size: 0.3733333333rem; }
+  .steward-task .steward-list {
+    display: flex;
+    justify-content: space-between; }
+    .steward-task .steward-list .item {
+      width: 47.8%;
+      padding: 0 0.2666666667rem;
+      box-shadow: 0 0 0.2666666667rem rgba(0, 0, 0, 0.1);
+      border-radius: 0.1333333333rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 2.2666666667rem; }
+      .steward-task .steward-list .item .num {
+        font-size: 0.64rem; }
+      .steward-task .steward-list .item .piece {
+        font-size: 0.32rem;
+        color: #666; }
+      .steward-task .steward-list .item .desc {
+        font-size: 0.3733333333rem;
+        color: #666; }
+      .steward-task .steward-list .item .game_time {
+        margin-bottom: -0.16rem; }
+
+.icon-list {
+  border-top: 0.4rem solid #f4f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 2.1333333333rem; }
+  .icon-list .item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 1.8666666667rem;
+    padding-top: 0.5333333333rem; }
+    .icon-list .item .item-img {
+      width: 0.6666666667rem;
+      height: 0.6666666667rem;
+      display: flex;
+      align-items: center; }
+    .icon-list .item img {
+      width: 100%; }
+    .icon-list .item .item-title {
+      margin-top: 0.2133333333rem;
+      font-size: 0.32rem;
+      color: #3e3e3e; }
+
+/*# sourceMappingURL=steward.css.map */

@@ -1,0 +1,92 @@
+@import "style.scss";
+.content{
+    padding-top: px2rem(44);  
+}
+
+.input-wapper{
+    height: px2rem(90);
+    background-color: #fff;
+    padding:0 px2rem(15);
+    span{
+        width: px2rem(80);
+        text-align: right;
+    }
+    input{
+        flex: 1;
+        width: unset;
+        border: unset;
+        border-bottom: px2rem(1) solid #E2E2E2;
+        border-radius: unset;
+        font-size: px2rem(16);
+        margin: 0;
+    }
+}
+
+.submit-button{
+    
+    height: px2rem(44);
+    border-radius: px2rem(40);
+    margin: 0 px2rem(30);
+    background-color: #2A83FF;
+    box-shadow: 0 px2rem(1) px2rem(3) rgba(#2A83ff,.5);
+    color: #fff;
+    line-height: px2rem(44);
+    text-align: center;
+    margin-top: px2rem(200);
+}
+
+
+.about-bg{
+    margin: auto;
+    margin-top: px2rem(60);
+    width: 80%;
+    margin-bottom: px2rem(30);
+    img{
+        width: 100%;
+    }
+}
+
+.about-desc{
+    margin-top: px2rem(30);
+    color: #919191;
+    padding: 0 px2rem(12);
+}
+
+.about-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;    
+    width: 100%;
+    color: #919191;
+    font-size: px2rem(12);
+    height: px2rem(30);
+    line-height: px2rem(30);
+    text-align: center;
+}
+
+.textarea-wapper{
+        background-color: #fff;
+        textarea{
+            font-size: px2rem(16);
+            margin-bottom: unset;
+        }
+}
+
+.contact{
+    background-color: #fff;
+    height: px2rem(44);
+    padding: 0 px2rem(15);
+    span{
+        width: px2rem(70);
+    }
+    input{
+        margin-top: px2rem(3);
+        height: px2rem(40);
+        line-height: px2rem(44);
+        flex: 1;
+        width: unset;
+        font-size: px2rem(16);
+        margin-bottom: unset;
+        border: unset;
+    }
+}

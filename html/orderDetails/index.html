@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/orderDetails.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body style="background-color: #F4F4F4;">
+		<div id="details">
+			<header class="mui-bar mui-bar-nav">
+				<a style="color: #fff;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" style="color: #fff;">任务详情</h1>
+			</header>
+			<div class="content">
+				<!--
+                	作者：1169774483@qq.com
+                	时间：2018-06-07
+                	描述： 上半部
+                -->
+				<div class="item-wapper margin-top15">
+					<div class="desc bottom-underline">
+						<span class="title">[门锁修理]</span> 1栋2单元306房门钥匙卡主了！请尽快安 排师傅过来维修
+					</div>
+					<div class="bottom-underline mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<div class="mui-scroll">
+							<div class="img-wapper margin-top15 ">
+								<div class="item-item">
+									<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528360212888&di=b799141d2ebd89f476d2a3ce0b88e03a&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fa8ec8a13632762d085ef3f22acec08fa503dc65e.jpg"/>
+								</div>
+								<div class="item-item">
+									<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528360440669&di=b62612d02bfeef1562b00403f8c21761&imgtype=0&src=http%3A%2F%2Fa.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fca1349540923dd54bea53cf5dd09b3de9d82485d.jpg"/>
+								</div>
+								<div class="item-item">
+									<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528360212893&di=661221d879791b456d11245323e9a005&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F377adab44aed2e73dd3e1db18b01a18b86d6fa5c.jpg"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="record margin-top15">
+						<div class="record-item">
+							<span>40分钟前</span>
+							<span>16”</span>
+						</div>
+					</div>
+				</div>
+				<!--
+                	作者：1169774483@qq.com
+                	时间：2018-06-07
+                	描述：中部
+                -->
+                <div class="orderUser margin-top15">
+                	<div class="item">
+						<div class="item-title bottom-underline">
+							<span class="title">住址</span>
+							<span class="desc">陕西省西安市未央区赛高街区</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="item-title bottom-underline">
+							<span class="title">联系人</span>
+							<span class="desc">魏帅帅</span>
+						</div>
+					</div>
+					<div class="item" @click="goiponeClick">
+						<div class="item-title">
+							<span class="title">联系电话</span>
+							<div class="ipone">18209208297 <span class="mui-icon mui-icon-phone"></span></div>
+						</div>
+					</div>
+                </div>
+                <!--
+                	作者：1169774483@qq.com
+                	时间：2018-06-07
+                	描述：下部分
+                -->
+                <div class="schedule margin-top15">
+                	<div class="button-wapper margin-bottom15">
+                		<div class="done">完成</div>
+                		<div class="over">结束</div>
+                	</div>
+                	<div class="flowPath-wapper">
+                		<div class="list-item left-icon-red">
+                			<div class="item-time">2017-12-22 15:08</div>
+                			<div class="item-title">张全蛋已完成工单，正在等待审核</div>
+                		</div>
+                		<div class="list-item left-icon-hui">
+                			<div class="item-time">2017-12-22 15:08</div>
+                			<div class="item-title">张全蛋已接受工单，正在处理</div>
+                		</div>
+                		<div class="list-item left-icon-hui">
+                			<div class="item-time">2017-12-22 15:08</div>
+                			<div class="item-title">工单由 刘三指派给张全蛋</div>
+                		</div>
+                		<div class="list-item left-icon-hui">
+                			<div class="item-time">2017-12-22 15:08</div>
+                			<div class="item-title">工单由客服李红创建</div>
+                		</div>
+                	</div>
+                </div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var details = new Vue({
+				el:'#details',
+				data:{},
+				methods:{
+					goiponeClick:function(){
+						dialipone("18209208297") // 调用拨打电话方法
+					}
+				}
+			})
+			mui.init()
+			mui.plusReady(function() {
+				var orderID = plus.webview.currentWebview().orderID;
+				console.log(orderID)
+			})
+			 function dialipone(ipone){  // 拨打电话方法
+					plus.device.dial(ipone,false);
+				}
+			mui.previewImage(); 
+		</script>
+	</body>
+
+</html>

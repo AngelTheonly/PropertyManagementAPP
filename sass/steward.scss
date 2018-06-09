@@ -1,0 +1,246 @@
+@import "style.scss";
+.steward-header {
+    height: px2rem(44);
+    line-height: px2rem(44);
+    color: #fff;
+    font-size: px2rem(17);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    .header-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: px2rem(40);
+        width: px2rem(40);
+        display: flex;
+        align-items: center;
+        .num {
+            position: absolute;
+            top: px2rem(5);
+            right: px2rem(10);
+            width: px2rem(15);
+            height: px2rem(15);
+            background-color: red;
+            color: #fff;
+            border-radius: 50%;
+            font-size: $font12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: px2rem(30);
+            height: px2rem(30);
+        }
+    }
+}
+
+.steward-weather {
+    height: 0;
+    overflow: hidden;
+    padding: 0 px2rem(15);
+    padding-bottom: 35%;
+    padding-top: px2rem(44);
+    background: linear-gradient(#1B77F6, #51B7FF);
+    display: flex;
+    justify-content: space-between;
+    .user {
+        padding-right: px2rem(15);
+        .user-name {
+            color: rgba($color, .7);
+            font-size: px2rem(24);
+        }
+        .user-position {
+            display: inline-block;
+            margin-top: px2rem(10);
+            padding: px2rem(1) px2rem(10);
+            border-radius: px2rem(20);
+            background-color: #6DBBF8;
+            color: rgba($color, .7);
+            border: px2rem(1) solid rgba($color, .7);
+            font-size: $font12;
+            margin-bottom: px2rem(20);
+        }
+        .time {
+            border-top: px2rem(1) solid rgba($color, .7);
+            padding-top: px2rem(10);
+            color: rgba($color, .7);
+            font-size: $font12;
+        }
+    }
+    .weather {
+        width: px2rem(170);
+        .temperature {
+            display: flex;
+            margin-bottom: px2rem(5);
+            div {
+                flex: 1;
+            }
+            .left {
+                font-size: px2rem(70);
+                color: rgba($color, .7);
+                position: relative;
+                line-height: px2rem(80);
+                padding-right: px2rem(10);
+                .left-icon {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: px2rem(10);
+                    height: px2rem(10);
+                    border-radius: 50%;
+                    border: px2rem(2) solid rgba($color, .7);
+                }
+            }
+            .right {
+                padding-top: px2rem(15);
+                padding-left: px2rem(15);
+                .humidity {
+                    padding-bottom: px2rem(10);
+                    border-bottom: px2rem(1) solid rgba($color, .7);
+                    margin-bottom: px2rem(10);
+                }
+                .humidity,
+                .temperature-max-min {
+                    color: rgba($color, .7);
+                    font-size: $font12;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    .weather-iocn-btn {
+        display: flex;
+        justify-content: space-between;
+        div {
+            font-size: $font12;
+            width: 47%;
+            color: rgba($color, .7);
+            height: px2rem(25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 px2rem(5) rgba(#000, .1);
+            background-color: #70C3FD;
+            border-radius: px2rem(2);
+        }
+    }
+}
+
+.steward-notice {
+    display: flex;
+    align-items: center;
+    padding: px2rem(10) px2rem(15);
+    background-color: #F9F9F9;
+    .stewrd-icon{
+        width: px2rem(20);
+        height: px2rem(20);
+        img{
+            width: 100%;
+        }
+    }
+    .stewrd-warpper {
+        margin-left: px2rem(15);
+        .notice-txt {
+            color: #333;
+        }
+        .notice-time {
+            margin-left: px2rem(10);
+            color: #B6B6B6;
+            font-size: px2rem(14);
+        }
+    }
+}
+
+.steward-task {
+    padding: px2rem(15);
+    .backlog {
+        padding: 0 px2rem(15);
+        box-shadow: 0 0 px2rem(10) rgba(#000, .1);
+        border-radius: px2rem(5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: px2rem(85);
+        margin-bottom: px2rem(15);
+        .game_time {
+            margin-bottom: px2rem(-6);
+        }
+        .backlog-desc {
+            .num {
+                font-size: px2rem(24);
+            }
+            .piece {
+                font-size: px2rem(12);
+                color: #666;
+            }
+            .desc {
+                margin-left: px2rem(10);
+                color: #666;
+                font-size: px2rem(14);
+            }
+        }
+    }
+    .steward-list {
+        display: flex;
+        justify-content: space-between;
+        .item {
+            width: 47.8%;
+            padding: 0 px2rem(10);
+            box-shadow: 0 0 px2rem(10) rgba(#000, .1);
+            border-radius: px2rem(5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: px2rem(85);
+            .num {
+                font-size: px2rem(24);
+            }
+            .piece {
+                font-size: px2rem(12);
+                color: #666;
+            }
+            .desc {
+                font-size: px2rem(14);
+                color: #666;
+            }
+            .game_time {
+                margin-bottom: px2rem(-6);
+            }
+        }
+    }
+}
+
+.icon-list{
+    border-top: px2rem(15) solid #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: px2rem(80);
+    .item{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: px2rem(70);
+        padding-top: px2rem(20);
+        .item-img{
+            width: px2rem(25);
+            height: px2rem(25);
+            display: flex;
+            align-items: center;
+        }
+        img{
+            width: 100%;
+        }
+        .item-title{
+            margin-top: px2rem(8);
+            font-size: px2rem(12);
+            color: #3e3e3e;
+        }
+    }
+}

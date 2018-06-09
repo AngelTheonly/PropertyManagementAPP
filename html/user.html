@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body style="background-color: #F4F4F4;">
+		<div class="bottom-bow"></div>
+		<div id="user">
+			<div class="header">
+				<div class="header-title">我的</div>
+				<div class="header-desc" @click="openMyDetailClick">
+					<img class="header-bg" src="../images/wybr.png" />
+					<div class="desc-wapper">
+						<div class="name">魏帅帅</div>
+						<div class="position">西安物业管理：维修领班</div>
+					</div>
+					<div class="desc-portrait">
+						<img src="http://img0.imgtn.bdimg.com/it/u=4226190776,3456727208&fm=27&gp=0.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="item" @click="messageClick">
+					<div class="item-icon">
+						<img src="../images/xiaoxi.png" />
+					</div>
+					<div class="item-title bottom-underline left-arrows">
+						<span class="title">消息</span>
+						<span class="desc">查看新消息</span>
+					</div>
+				</div>
+				<div class="item" @click="ReportMatter">
+					<div class="item-icon">
+						<img src="../images/s_baoshi.png" />
+					</div>
+					<div class="item-title bottom-underline left-arrows">
+						<span class="title">报事</span>
+					</div>
+				</div>
+				<div class="item" @click="settingClick">
+					<div class="item-icon">
+						<img src="../images/shezhi.png" />
+					</div>
+					<div class="item-title left-arrows">
+						<span class="title">设置</span>
+					</div>
+				</div>
+			</div>
+			<div class="list margin-top20" @click="disembark">
+				<div class="item">
+					<div class="item-icon">
+						<img src="../images/tuichu.png" />
+					</div>
+					<div class="item-title">
+						<span class="title">退出登录</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script type="text/javascript">
+			var user = new Vue({
+				el: '#user',
+				data: {},
+				methods: {
+					messageClick: function() {
+						mui.openWindow({
+							url: 'message.html',
+							id: 'message.html',
+							extras: {
+								name: "message"
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					},
+					ReportMatter: function() {
+						mui.openWindow({
+							url: 'ReportMatter.html',
+							id: 'ReportMatter.html',
+							waiting: {
+								autoShow: false
+							}
+						});
+					},
+					openMyDetailClick: function() {
+						mui.openWindow({
+							url: 'my.html',
+							id: 'my.html',
+							waiting: {
+								autoShow: false
+							}
+						});
+					},
+					settingClick: function() {
+						plus.nativeUI.actionSheet({
+							cancel: "取消",
+							buttons: [{
+									title: "修改密码"
+								},
+								{
+									title: "关于我们"
+								},
+								{
+									title: '意见反馈'
+								}
+							]
+						}, function(e) {
+							var htmlUrl
+							if(e.index == 1) {
+								htmlUrl = 'Setting/AmendPassword.html'
+							} else if(e.index == 2) {
+								htmlUrl = 'Setting/AboutUs.html'
+							} else if(e.index == 3) {
+								htmlUrl = 'Setting/feedback.html'
+							}
+							if(htmlUrl) {
+								mui.openWindow({
+									url: htmlUrl,
+									id: htmlUrl,
+									waiting: {
+										autoShow: false
+									}
+								});
+							}
+
+						});
+					},
+					disembark: function() {
+						plus.nativeUI.confirm("您要退出登录吗？", function(e) {
+							if(e.index == 0) {
+								plus.storage.removeItem("ipone");
+								setTimeout(function() {
+									plus.runtime.restart();
+								}, 500)
+							}
+						});
+					}
+				}
+			})
+			mui.init({
+
+			})
+
+			mui.plusReady(function() {
+
+			})
+		</script>
+	</body>
+
+</html>

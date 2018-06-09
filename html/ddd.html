@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/workOrder.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body>
+		<div class="bottom-bow"></div>
+		<div id="workOrder">
+			<header class="mui-bar mui-bar-nav">
+				<a style="color: #fff;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" style="color: #fff;">工单</h1>
+			</header>
+
+			<div class="tab-list">
+				<div class="list-item" v-for="(item,index) in tabList" @click="tabListClick(index)" :style="num==index?'color:#2A83FF;':''">{{item}}</div>
+				<div class="tab-icon" :style="left"></div>
+			</div>
+			<div class="mui-content">
+				<div id="refreshContainer" class="list-container mui-scroll-wrapper" style="top: 2.3466666667rem;">
+					<div class="mui-scroll">
+						<div class="list-item" v-for="item in [1,1,2,1,1,1,1,1,1,11,1,1]" @click="orderDetails">
+							<div class="item-type">业主报修</div>
+							<div class="item-title">空调维修</div>
+							<div class="item-desc">
+								<span>尚品国际12栋1单元1001</span>
+								<span>23分钟前</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var workOrder = new Vue({
+				el: '#workOrder',
+				data: {
+					num: 0,
+					left: 'left:8%;',
+					tabList: [
+						'待办事项',
+						'审核事项',
+						'完成事项'
+					],
+					movies: []
+				},
+				methods: {
+					tabListClick: function(id) {
+						this.num = id
+						console.log(this.num)
+						if(this.num == 0) {
+							this.left = 'left:7%;'
+						}
+						if(this.num == 1) {
+							this.left = 'left:41%;'
+						} else if(this.num == 2) {
+							this.left = 'left:74%;'
+						}
+					},
+					orderDetails: function() {
+						mui.openWindow({
+							url: 'orderDetails/index.html',
+							id: 'orderDetails/index.html',
+							extras: {
+							   orderID: "01"
+							}
+						});
+					}
+				}
+			});
+			mui.init({
+				swipeBack: true, //启用右滑关闭功能
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						auto: true, //可选,默认false.首次加载自动下拉刷新一次
+						callback: refreshData //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: loadMoreData //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var name = self.name;
+				var version = self.version;
+				console.log(name)
+				console.log(version)
+			})
+
+			function refreshData() {
+				setTimeout(function() {
+					mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+					mui('#refreshContainer').pullRefresh().refresh(true);
+					mui.toast('下拉加载完成')
+				}, 1000)
+			}
+
+			function loadMoreData() {
+				setTimeout(function() {
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh(false);
+					mui.toast('上拉更多完成')
+				}, 1000)
+			}
+		</script>
+	</body>
+
+</html>

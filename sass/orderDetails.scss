@@ -1,0 +1,171 @@
+@import "style.scss";
+.mui-segmented-control.mui-scroll-wrapper{
+     height:px2rem(140);
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-scroll{
+    height:px2rem(140);
+}
+.content{
+    padding-top: px2rem(44);
+    .item-wapper{
+        background-color: #fff;
+        padding: px2rem(15);
+        .desc{
+            padding-bottom: px2rem(15);
+            font-size: px2rem(15);
+            color: #3E3E3E;
+            line-height: px2rem(23);
+            .title{
+                font-weight: bold;
+            }
+        }
+        .img-wapper{
+            display: flex;
+            
+            .item-item{
+                overflow: hidden;
+                border-radius: px2rem(5);
+                width: px2rem(140);
+                height: px2rem(110);
+                background-color: #eee;
+                display: flex;
+                align-items: center;
+                margin-right: px2rem(15);
+                margin-bottom: px2rem(15);
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .record{
+            .record-item{
+                height: px2rem(39);
+                background-color: #F9F9F9;
+                border-radius: px2rem(5);
+                border: px2rem(1) solid #E2E2E2;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 px2rem(15);
+                margin-bottom: px2rem(15);
+                &:last-child{
+                    margin-bottom: unset;
+                }
+                span{
+                    color: #5e5e5e;
+                    font-size: px2rem(12);
+                }
+            }
+        }
+    }
+}
+
+.orderUser{
+ 
+       
+        .item {
+            padding-left: px2rem(15);
+            height: px2rem(44);
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            overflow: hidden;
+            position: relative;
+            .item-title {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                flex: 1;
+                justify-content: space-between;
+                .desc {
+                    margin-right: px2rem(15);
+                    font-size: px2rem(14);
+                    color: #ABABAB;
+                    position: relative;
+                }
+                .ipone{
+                    margin-right: px2rem(15);
+                    font-size: px2rem(14);
+                    color: #357AFF;
+                    .mui-icon{
+                        font-size: px2rem(20);
+                    }
+                }
+            }
+        }
+}
+ 
+
+.schedule{
+    background: #fff;
+    padding: px2rem(15);
+    .button-wapper{
+        display: flex;
+        justify-content: space-between;
+        .done,.over{
+            width: 48%;
+            height: px2rem(45);
+            border-radius: px2rem(5);
+            line-height: px2rem(45);
+            text-align: center;
+            color: #fff;
+            font-size: px2rem(14);
+        }
+        .done{
+            background-color: #2A83FF;
+            box-shadow: 0 px2rem(1) px2rem(3) rgba(#2A83FF,.5);
+        }
+        .over{
+            background-color: #FF5D5D;
+            box-shadow: 0 px2rem(1) px2rem(3) rgba(#FF5D5D,.5);
+        }
+    }
+    .flowPath-wapper{
+        border-left: px2rem(1) solid #E2E2E2;
+        .left-icon-red{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                top: px2rem(1);
+                left: px2rem(-5);
+                width: px2rem(10);
+                height: px2rem(10);
+                background-color: #FF5D5D;
+                border-radius: px2rem(10);
+            }
+        }
+        .left-icon-hui{
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                top: px2rem(1);
+                left: px2rem(-5);
+                width: px2rem(10);
+                height: px2rem(10);
+                background-color: #C6C6C6;
+                border-radius: px2rem(10);
+            }
+        }
+        .list-item{
+            padding-left: px2rem(15);
+            .item-time{
+                color: #919191;
+                font-size: px2rem(12);
+                margin-bottom: px2rem(5);
+            }
+            .item-title{
+                font-size: px2rem(13);
+                padding-bottom: px2rem(15);
+                margin-bottom: px2rem(15);
+                border-bottom: px2rem(1) solid #E2E2E2;
+                span{
+                    color: #357AFF;
+                }
+            }
+        }
+    }
+}

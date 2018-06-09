@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/register.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+			}
+			
+			body {
+				background: url(../images/chengshi.png);
+				background-size: cover;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="register">
+
+			<div class="form">
+              <span class="form-title">账号</span>
+				<div class="mui-input-row">
+					<input class="input" type="number" v-model="ipone"  @keyup.13="iphone($event)">
+				</div>
+				<span class="form-title">密码</span>
+				<div class="mui-input-row mui-password">
+					<input  class="input" type="password" v-model="Password" class="mui-input-password" @keyup.13="password($event)">
+				</div>
+			</div>
+
+			<div class="margin-top20 botton" @click="tijiao">
+				登录
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/util.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				keyEventBind: {
+					backbutton: false //关闭back按键监听
+				}
+			})
+			mui.plusReady(function() {
+				console.log()
+				var register = new Vue({
+					el: '#register',
+					data: {
+						ipone: '',
+						Password: ''
+					},
+					methods: {
+						iphone: function(e) {
+
+						},
+						password: function(e) {
+
+						},
+						tijiao: function() {
+							var that = this
+							if(!that.ipone){
+							   	mui.alert('请填写账号')
+							   	return
+							}
+							if(!that.Password){
+								mui.alert('未输入密码')
+								return
+							}
+							plus.storage.setItem('ipone',that.ipone)
+							mui.back()
+							var list = plus.webview.currentWebview().opener();
+							//触发父页面的自定义事件(refresh),从而进行刷新
+							mui.fire(list, 'refresh');
+							//返回true,继续页面关闭逻辑
+							return true;
+							
+							
+//                          mui.post(httpUrl.testUrl+'/api/Users/Login',{
+//									userName: that.ipone,
+//									userPwd: that.Password
+//								},function(res){
+//									mui.alert(res)
+//								}
+//							);
+							
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

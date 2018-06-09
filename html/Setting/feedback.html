@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Setting.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body style="background-color: #F4F4F4;">
+		<div id="feedback">
+			<header class="mui-bar mui-bar-nav">
+				<a style="color: #fff;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" style="color: #fff;">意见反馈</h1>
+			</header>
+			<div class="content">
+				<div class="textarea-wapper margin-top15">
+					<div class="mui-input-row padding15">
+						<textarea id="textarea"  rows="5" placeholder="请说明一下您遇到的问题…"></textarea>
+					</div>
+				</div>
+				<div class="contact flex-between margin-top15">
+					<span>联系方式</span>
+					<input type="number" placeholder="请输入联系方式" maxlength="11" />
+				</div>
+				<div class="submit-button">
+					提交
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var feedback = new Vue({
+				el:'#feedback',
+				data:{
+					
+				}
+			})
+		</script>
+	</body>
+
+</html>

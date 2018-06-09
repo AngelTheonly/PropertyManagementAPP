@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/address.css" />
+		<script type="text/javascript">
+			// 获取HTML的DOM
+			var htmlDom = document.getElementsByTagName('html')[0];
+			var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			// 设置html的fontsize
+			htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+		</script>
+	</head>
+
+	<body style="background-color: #F4F4F4;">
+		<!--
+        	作者：1169774483@qq.com
+        	时间：2018-06-08
+        	描述： 通讯录
+        -->
+		<div id="address">
+			<header class="mui-bar mui-bar-nav">
+				<a style="color: #fff;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" style="color: #fff;">通讯录</h1>
+			</header>
+			<div class="content">
+				<div class="search bottom-underline">
+					<div class="mui-input-row mui-search">
+						<input type="search" class="mui-input-clear" placeholder="搜索">
+					</div>
+				</div>
+				
+                <div class="address-wapper" v-for="item in addressList">
+                	<div class="title">{{item.department}}</div>
+                	<div class="list-item" v-for="son in item.list" :style="son.sate?'height:6.2933333333rem':'height: 1.6rem;'">
+                		<div class="desc flex-between" @click="examineClick(son.name)">
+                			<div class="head-img flex-between">
+                				<img :src="son.headImg"/>
+                				<span>{{son.name}}</span>
+                			</div>
+                			<span class="desc-icon" :style="son.sate?'transform: rotate(-45deg)':'transform: rotate(135deg)'"></span>
+                		</div>
+                		<div class="desc-inof">
+                			<div class="list-item flex-between" @click="goiponeClick(son.ipone)">
+                				<span class="text" style="color: #3E3E3E;">手机</span> 
+                				<span class="text" style="color: #357AFF;">{{son.ipone}}</span> 
+                			</div>
+                			<div class="list-item flex-between">
+                				<span class="text" style="color: #3E3E3E;">微信</span> 
+                				<span class="text" style="color: #919191;">{{son.WeChat}}</span> 
+                			</div>
+                			<div class="list-item flex-between">
+                				<span class="text" style="color: #3E3E3E;">QQ</span> 
+                				<span class="text" style="color: #919191;">{{son.qq}}</span>
+                			</div>
+                			<div class="list-item flex-between">
+                				<span class="text" style="color: #3E3E3E;">邮箱</span> 
+                				<span class="text" style="color: #919191;">{{son.Email}}</span>
+                			</div>
+                		</div>
+                		
+                	</div>
+                </div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script type="text/javascript">
+			var address = new Vue({
+				el:'#address',
+				data:{
+					addressList:[
+					    {
+					    	department:'保安部',
+					    	list:[
+					    	  {
+					    	  	sate:false,
+					    	  	name:'张全蛋',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842194&di=f5bc3108325272ac3512055048dbf2f0&imgtype=0&src=http%3A%2F%2Fimage.3761.com%2Fpic%2F60551427329562.png',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'李大本事',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842194&di=be2f66a9d8fea0c9685854870df8c619&imgtype=0&src=http%3A%2F%2Ftx.haiqq.com%2Fuploads%2Fallimg%2F170510%2F10513532O-3.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'李二狗',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842193&di=b6634022b1f3dc3ae80085d85522c961&imgtype=0&src=http%3A%2F%2Fp.3761.com%2Fpic%2F52821429577293.png',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  }
+					    	]
+					    },
+					     {
+					    	department:'保洁部',
+					    	list:[
+					    	  {
+					    	  	sate:false,
+					    	  	name:'张晓婷',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842193&di=b3353b33ca7c3ca026555db77c96ac44&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2015-01-16%2F085709961.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'葛倩倩',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842192&di=685d8cf5461bf5964d2e6e5af9fea6f9&imgtype=0&src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20140101%2F01-075743_53.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'刘桂芳',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842191&di=cb0ab4f18c14cd7bfc7d62f615bc685b&imgtype=0&src=http%3A%2F%2Fimgtu.5011.net%2Fuploads%2Fcontent%2F20170405%2F5292781491383770.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  }
+					    	]
+					    },
+					    {
+					    	department:'客服部',
+					    	list:[
+					    	  {
+					    	  	sate:false,
+					    	  	name:'张丽颖',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842191&di=d7b3c00de496ae2d1c13b183edb7255d&imgtype=0&src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20120418%2F18-011704_848.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'杨幂',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450842191&di=98360810675d3fd229cb1b089f6d6cca&imgtype=0&src=http%3A%2F%2Fimgtu.5011.net%2Fuploads%2Fcontent%2F20170509%2F4295221494323304.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  },
+					    	  {
+					    	  	sate:false,
+					    	  	name:'林青霞',
+					    	  	headImg:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528450951145&di=515cb32e83eb050575c784faa78f65dc&imgtype=0&src=http%3A%2F%2Fgb.cri.cn%2Fmmsource%2Fimages%2F2012%2F04%2F28%2F28%2F16398199022820830696.jpg',
+					    	  	ipone:'18209208297',
+					    	  	WeChat:'WeChat',
+					    	  	qq:'1169774483',
+					    	  	Email:'1169774483@qq.com'
+					    	  }
+					    	]
+					    },
+					 ]
+				},
+				
+				computed:{
+					addressNewList:function(){
+						var dataList = this.addressList
+						dataList.forEach(function(item,idnex){
+							item.list.forEach(function(son,num){
+								son.sate = false
+							})
+						})
+						return dataList
+					}
+				},
+				methods:{
+					examineClick:function(name){
+						var dataList = this.addressList
+						this.addressList.forEach(function(item,idnex){
+							item.list.forEach(function(son,num){
+								if(name == son.name){
+								    son.sate = !son.sate
+								}
+							})
+						})
+						this.addressList = dataList
+					},
+					goiponeClick:function(ipone){
+						dialipone(ipone)
+					}
+				}
+				
+			})
+			mui.init()
+			mui.plusReady(function(){
+				
+			})
+			 function dialipone(ipone){  // 拨打电话方法
+					plus.device.dial(ipone,false);
+				}
+		</script>
+	</body>
+
+</html>
